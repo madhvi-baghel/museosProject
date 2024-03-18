@@ -149,6 +149,21 @@ tL.to("#page1-img #img3",{
         })
      })
     
+     function heroAnimation() {
+        gsap.to(".page1-img img", {
+            scale: 1,
+            ease: "expo.inOut",
+            scrollTrigger: {
+                scroller: "body",
+                trigger: ".page1-img img",
+                start: window.innerWidth > 700 ? "top -80%" : "top 0",
+                end: window.innerWidth > 700 ? "top 150%" : "top -10%",
+                scrub: 5,
+            }
+        });
+    }
+    heroAnimation()
+    
 // var bar = document.querySelector("#myBar")
 //     window.addEventListener('scroll', function() {
 //         var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
@@ -193,18 +208,36 @@ tL.to("#page1-img #img3",{
 
 // smoothScrollUpdate();
 
-var il = gsap.timeline() 
-ScrollTrigger.create({
-    trigger: "#worrier",
-    start: "top top",
-    end: "bottom bottom",
-    onUpdate: self => {
-      const progress = self.progress; 
-      const scaleFactor = 1 + (progress * 0.5); 
+function worrierAnimation() {
+    window.innerWidth > 640 && pinAnimation("context");
+    textAnimation("context");
+
+    gsap.to(".a-context img", {
+        scale: window.innerWidth > 640 ? 1.6 : 2,
+        y: -60,
+        ease: "none",
+        scrollTrigger: {
+            scroller: "body",
+            trigger: ".a-context img",
+            start: window.innerWidth > 640 ? "top 100%" : "",
+            end: window.innerWidth > 640 ? "top -100%" : "top -50%",
+            scrub: true,
+        }
+    })
+}
+worrierAnimation()
+// var il = gsap.timeline() 
+// ScrollTrigger.create({
+//     trigger: "#worrier",
+//     start: "top top",
+//     end: "bottom bottom",
+//     onUpdate: self => {
+//       const progress = self.progress; 
+//       const scaleFactor = 1 + (progress * 0.5); 
   
-      il.from("#scrollImage", { scale: scaleFactor, duration: 0.5 });
-    }
-  }); 
+//       il.from("#scrollImage", { scale: scaleFactor, duration: 0.5 });
+//     }
+//   }); 
     // il.from("#worrier img",{
     //     scale:"1.0",
     //     scrollTrigger:{

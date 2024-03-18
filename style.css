@@ -100,61 +100,19 @@ body::selection{
     color:#000;
 }
 
-#page1-img{
-    /* background-color: red; */
-    height:180vh;
+.page1-img img {
     width: 100%;
-    overflow: hidden;
-    /* position: relative; */
-}
-#page1-img img{
-    width: 100%;
-    overflow: hidden;
-}
-#page1-img #img1{
-    height: 33.3%;
-    /* height: auto; */
-    width: 100%;
-    /* object-fit:cover; */
-     /* border: 1px solid #fff; */
-    background-image:url("https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fresurgimiento-patria.p_t8GGPO.jpg&w=2048&q=100");
-    position: relative;
-    margin-top: -30vh;
-    margin-left: -30%;
-    scale: 1.7;
-    /*object-fit: cover;*/
-    background-position-y: 28%;
-    overflow: hidden;
-}
-#page1-img #img2{
-    position: relative;
-    top: 18%;
-    height: 33.3%;
-    width: 100%;
-    /* margin-bottom: -70vh; */
-    scale: 1.4;
-    overflow: hidden;
-    /* object-position: bottom; */
-    /* border: 1px solid #fff; */
-    background-image: url("https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fresurgimiento-patria.p_t8GGPO.jpg&w=2048&q=100");
-    background-position: bottom;
-    background-position-y: 55%;
-}
-#page1-img #img3{
-    position: absolute;
-    /* margin-top: -20vh; */
-    /* top: 70%; */
-    height: 33.3%;
-    width: 100%;
-    overflow: hidden;
-    background-position-y: 80%;
-    /* margin-left: -5vw; */
-    scale: 1;
-    margin-bottom: -90vh;
-    /* border: 1px solid #fff; */
-    background-image: url("https://museos.arteyeducacion.org/_vercel/image?url=assets%2Fresurgimiento-patria.p_t8GGPO.jpg&w=2048&q=100");
-}
+    object-fit: cover;
+    transform: scale(2.1, 2.1);
 
+    &:first-child {
+        transform-origin: 40% 50%;
+    }
+
+    &:last-child {
+        transform-origin: 80% 50%;
+    }
+}
 
 
 
@@ -441,26 +399,6 @@ body::selection{
    color: #fff;
    line-height: 6vh;
    font-family: font2;
-}
-#worrier{
-    padding: 5vh;
-    height: 80vh;
-    width: 90%;
-    overflow: auto;
-    position: relative;
-    /* background-color: red; */
-}
-#worrier img{
-    width: 100%;
-    height: 100%;
-    object-fit:cover;
-}
-#scrollImage {
-    position: absolute; 
-    width: 100%; 
-    height: auto; 
-    max-width: 100%;
-    transition: transform 0.5s ease; 
 }
 #page6{
     height: 100vh;
