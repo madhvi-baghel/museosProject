@@ -56,7 +56,7 @@ var tl = gsap.timeline()
         display:"none",
         duration:1,
     })
-    tl.from("#page1-part2 h1",{
+    tl.from("#page1 #head h1",{
         y:120,
         stagger:0.2,
         opacity:0
@@ -92,9 +92,6 @@ var tl = gsap.timeline()
     // }
     // })
     
-    //     width: "98.7vw",
-    //     height: "200vh",
-    //     // delay:1,
 var tL = gsap.timeline()   
 tL.to("#page1-img",{
        height:"auto",
@@ -164,6 +161,25 @@ tL.to("#page1-img #img3",{
     }
     heroAnimation()
     
+    function worrierAnimation() {
+        window.innerWidth > 640 && pinAnimation("context");
+        textAnimation("context");
+    
+        gsap.to(".a-context img", {
+            scale: window.innerWidth > 640 ? 1.6 : 2,
+            y: -60,
+            ease: "none",
+            scrollTrigger: {
+                scroller: "body",
+                trigger: ".a-context img",
+                start: window.innerWidth > 640 ? "top 100%" : "",
+                end: window.innerWidth > 640 ? "top -100%" : "top -50%",
+                scrub: true,
+            }
+        })
+    }
+    worrierAnimation()
+
 // var bar = document.querySelector("#myBar")
 //     window.addEventListener('scroll', function() {
 //         var scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
@@ -208,24 +224,7 @@ tL.to("#page1-img #img3",{
 
 // smoothScrollUpdate();
 
-function worrierAnimation() {
-    window.innerWidth > 640 && pinAnimation("context");
-    textAnimation("context");
 
-    gsap.to(".a-context img", {
-        scale: window.innerWidth > 640 ? 1.6 : 2,
-        y: -60,
-        ease: "none",
-        scrollTrigger: {
-            scroller: "body",
-            trigger: ".a-context img",
-            start: window.innerWidth > 640 ? "top 100%" : "",
-            end: window.innerWidth > 640 ? "top -100%" : "top -50%",
-            scrub: true,
-        }
-    })
-}
-worrierAnimation()
 // var il = gsap.timeline() 
 // ScrollTrigger.create({
 //     trigger: "#worrier",
